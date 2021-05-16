@@ -12,7 +12,7 @@ namespace SearchJson
         #region Main Methods
 
         /// <summary>
-        /// Search the JSON for the specified item.
+        /// Searches the JSON for the specified item.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json">The JSON value</param>
@@ -23,7 +23,7 @@ namespace SearchJson
             where T : struct => TrySearchItemPrivate(json, itemName, out itemValue);
 
         /// <summary>
-        /// Search the JSON for the specified item.
+        /// Searches the JSON for the specified item.
         /// </summary>
         /// <param name="json">The JSON value</param>
         /// <param name="itemName">The item's name</param>
@@ -33,7 +33,7 @@ namespace SearchJson
             => TrySearchItemPrivate(json, itemName, out itemValue);
 
         /// <summary>
-        /// Search the JSON for the specified items
+        /// Searches the JSON for the specified items
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json">The JSON value</param>
@@ -44,7 +44,7 @@ namespace SearchJson
             => TrySearchItemsPrivate(json, itemName, out itemValues);
 
         /// <summary>
-        /// Search the JSON for the specified items
+        /// Searches the JSON for the specified items
         /// </summary>
         /// <param name="json">The JSON value</param>
         /// <param name="itemName">The item's name</param>
@@ -83,7 +83,7 @@ namespace SearchJson
         #region Private Methods
 
         /// <summary>
-        /// Search the JSON for the specified item.
+        /// Searches the JSON for the specified item.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json">The JSON value</param>
@@ -103,7 +103,7 @@ namespace SearchJson
         }
 
         /// <summary>
-        /// Search the JSON for the specified items
+        /// Searches the JSON for the specified items
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json">The JSON value</param>
@@ -136,7 +136,7 @@ namespace SearchJson
         private static bool IsValidSearch(string json, string itemName) => (json?.IsValidJson() ?? false) && !string.IsNullOrWhiteSpace(itemName);
 
         /// <summary>
-        /// Recursively search for the first occurence of the item.
+        /// Recursively searches for the first occurence of the item.
         /// The item's value should not be null, default and if it is a string not an empty one.
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -161,7 +161,7 @@ namespace SearchJson
         }
 
         /// <summary>
-        /// Recursively search for the all the occurence of the item.
+        /// Recursively searches for the all the occurence of the item.
         /// The item's value should not be null, default and if it is a string not an empty one.
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -186,7 +186,7 @@ namespace SearchJson
         }
 
         /// <summary>
-        /// Retrieve object value based on the item's name
+        /// Retrieves object value based on the item's name
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="itemName">The item's name</param>
