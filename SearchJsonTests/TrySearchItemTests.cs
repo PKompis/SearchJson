@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using SearchJson;
 using SearchJsonTests.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -66,6 +67,72 @@ namespace SearchJsonTests
             Assert.IsTrue(success);
             Assert.AreEqual(flatObject.Property1, itemValue);
         }
+
+        [TestMethod]
+        public void SearchFlatObjectDateTime()
+        {
+            var flatObject = new FlatObject2
+            {
+                Property6 = DateTime.UtcNow
+            };
+
+            var json = JsonConvert.SerializeObject(flatObject);
+
+            var success = json.TrySearchItem<DateTime>(nameof(flatObject.Property6), out var itemValue);
+
+            Assert.IsTrue(success);
+            Assert.AreEqual(flatObject.Property6, itemValue);
+        }
+
+        [TestMethod]
+        public void SearchFlatObjectDecimal()
+        {
+            var flatObject = new FlatObject2
+            {
+                Property7 = 100.1m
+            };
+
+            var json = JsonConvert.SerializeObject(flatObject);
+
+            var success = json.TrySearchItem<decimal>(nameof(flatObject.Property7), out var itemValue);
+
+            Assert.IsTrue(success);
+            Assert.AreEqual(flatObject.Property7, itemValue);
+        }
+
+        [TestMethod]
+        public void SearchFlatObjectDouble()
+        {
+            var flatObject = new FlatObject2
+            {
+                Property8 = 100.1d
+            };
+
+            var json = JsonConvert.SerializeObject(flatObject);
+
+            var success = json.TrySearchItem<double>(nameof(flatObject.Property8), out var itemValue);
+
+            Assert.IsTrue(success);
+            Assert.AreEqual(flatObject.Property8, itemValue);
+        }
+
+
+        [TestMethod]
+        public void SearchFlatObjectBool()
+        {
+            var flatObject = new FlatObject2
+            {
+                Property9 = true
+            };
+
+            var json = JsonConvert.SerializeObject(flatObject);
+
+            var success = json.TrySearchItem<bool>(nameof(flatObject.Property9), out var itemValue);
+
+            Assert.IsTrue(success);
+            Assert.AreEqual(flatObject.Property9, itemValue);
+        }
+
 
         [TestMethod]
         public void SearchFlatObjectIntegerArray()
