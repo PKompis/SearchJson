@@ -19,8 +19,8 @@ namespace SearchJson
         /// <param name="itemName">The item's name</param>
         /// <param name="itemValue">The first occurence of the item</param>
         /// <returns>true if the search was succesful</returns>
-        public static bool TrySearchItem<T>(this string json, string itemName, out T itemValue)
-            where T : struct => TrySearchItemPrivate(json, itemName, out itemValue);
+        public static bool TrySearchItem<T>(this string json, string itemName, out T itemValue) where T : struct 
+            => TrySearchItemPrivate(json, itemName, out itemValue);
 
         /// <summary>
         /// Searches the JSON for the specified item.
@@ -80,7 +80,7 @@ namespace SearchJson
 
         #endregion
 
-        #region Private Methods
+        #region Helper Methods
 
         /// <summary>
         /// Searches the JSON for the specified item.

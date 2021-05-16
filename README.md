@@ -1,5 +1,5 @@
 The Search JSON is a library for searching properties recursively inside a JSON by specifying just the property name and its type. 
-Only Primitive types are supported and string.
+Only primitive types are supported and string.
 
 This library is just a simple experiment of mine and for production usage needs further testing and benchmarking.
 
