@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace SearchJson
 {
     /// <summary>
-    /// Search JSON Utilities for primitive types & string
+    /// Search JSON Utilities for primitive types & string.
     /// </summary>
     public static class SearchJsonUtils
     {
@@ -33,7 +33,7 @@ namespace SearchJson
             => TrySearchItemPrivate(json, itemName, out itemValue);
 
         /// <summary>
-        /// Searches the JSON for the specified items
+        /// Searches the JSON for the specified items.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json">The JSON value</param>
@@ -44,7 +44,7 @@ namespace SearchJson
             => TrySearchItemsPrivate(json, itemName, out itemValues);
 
         /// <summary>
-        /// Searches the JSON for the specified items
+        /// Searches the JSON for the specified items.
         /// </summary>
         /// <param name="json">The JSON value</param>
         /// <param name="itemName">The item's name</param>
@@ -56,7 +56,7 @@ namespace SearchJson
         /// <summary>
         /// Checks the validity of the specified JSON.
         /// </summary>
-        /// <param name="json"></param>
+        /// <param name="json">The JSON value</param>
         /// <returns>A flag which specifies the validity of the JSON</returns>
         public static bool IsValidJson(this string json)
         {
@@ -103,7 +103,7 @@ namespace SearchJson
         }
 
         /// <summary>
-        /// Searches the JSON for the specified items
+        /// Searches the JSON for the specified items.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json">The JSON value</param>
@@ -128,11 +128,11 @@ namespace SearchJson
         }
 
         /// <summary>
-        /// Checks if the search request is valid
+        /// Checks if the search request is valid.
         /// </summary>
-        /// <param name="json"></param>
-        /// <param name="itemName"></param>
-        /// <returns>true if valud search criteria</returns>
+        /// <param name="json">The JSON value</param>
+        /// <param name="itemName">The item's name</param>
+        /// <returns>true if the search criteria are valid</returns>
         private static bool IsValidSearch(string json, string itemName) => (json?.IsValidJson() ?? false) && !string.IsNullOrWhiteSpace(itemName);
 
         /// <summary>
@@ -186,12 +186,12 @@ namespace SearchJson
         }
 
         /// <summary>
-        /// Retrieves object value based on the item's name
+        /// Retrieves object value based on the item's name.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="itemName">The item's name</param>
         /// <param name="obj">The object</param>
-        /// <returns>Item's value</returns>
+        /// <returns>The item's value</returns>
         private static T RetrieveValue<T>(string itemName, JToken obj)
         {
             var value = obj.SelectToken(itemName);
