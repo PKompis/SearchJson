@@ -10,7 +10,7 @@ This library is just a simple experiment of mine and for production usage needs 
 ## Source code layout
 
 ``` ini
-SerializationBenchmark/
+SearchJson/
 ├── SearchJson/
 |   ├── SearchJsonUtils.cs
 ├── SearchJsonTests/
